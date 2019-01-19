@@ -107,11 +107,23 @@ console.log(multiplyNums(2,3, multiply));
 
 
 
-function contains(item, list) {
+function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  for(let i = 0; i < list.length - 1; i++) {
+   if(item === list[i]) {
+    cb(true);
+   } else {
+    cb(false);
+   }
+ }
 }
 
+function hi(x) {
+  console.log(x);
+}
+
+console.log(contains('Pencil', items, hi))
 
 
 
